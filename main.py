@@ -6,7 +6,7 @@ def main():
     a = []
 
     for i in range(n):
-        a.append([int(j) for j in input().split()])
+        a.append([int(j) for j in input('type in row {}(space after every digit please): '.format(i)).split()])
     
     goal = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
     Breadthfirst.breadthfirstsearch(a, goal)
