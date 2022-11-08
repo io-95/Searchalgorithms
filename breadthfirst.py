@@ -10,9 +10,9 @@ class Breadthfirst:
             if Breadthfirst.goalreached(node, goal):
                 print('goal reached')
                 return node
-            newNodes.append(predecessor(node))
+            newNodes.append(Breadthfirst.predecessor(node))
             if len(newNodes) > 0:
-                return breadthfirstsearch(newNodes, goal)
+                return Breadthfirst.breadthfirstsearch(newNodes, goal)
             else:
                 print('no solution')
                 return None
@@ -25,6 +25,6 @@ class Breadthfirst:
 
     @staticmethod
     def predecessor(currentNode):
-        for i in range(len(currentNode)):
-	    for j in rang(len(currentNode[i])):
-	    	print(currentNode[i])
+        for i in range(len(currentNode.node)):
+	        for j in range(len(currentNode.node[i])):
+	    	    print(currentNode.node[i])
