@@ -7,11 +7,15 @@ class Breadthfirst:
     def breadthfirstsearch(nodelist, goal):
         newNodes = []
         for node in nodelist:
-            isGoal = Breadthfirst.goalreached(node, goal)
-            if isGoal:
+            if Breadthfirst.goalreached(node, goal):
                 print('goal reached')
                 return node
-            
+            newNodes.append(predecessor(node))
+            if len(newNodes) > 0:
+                return breadthfirstsearch(newNodes, goal)
+            else
+                print('no solution')
+                return None
 
     @staticmethod
     def goalreached(aNode, goal):
@@ -19,3 +23,6 @@ class Breadthfirst:
         if len(res) == 0:
             return True
 
+    @staticmethod
+    def predecessor(currentNode):
+        
