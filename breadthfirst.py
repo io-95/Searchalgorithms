@@ -1,6 +1,7 @@
 import collections
 from node import Node
 
+
 class Breadthfirst:
 
     @staticmethod
@@ -11,7 +12,7 @@ class Breadthfirst:
                 print('goal reached')
                 return node
             newNodes.append(Breadthfirst.predecessor(node))
-            
+
             if newNodes[0] != None:
                 return Breadthfirst.breadthfirstsearch(newNodes, goal)
             else:
@@ -34,4 +35,21 @@ class Breadthfirst:
                     positionZero.append(i)
                     positionZero.append(j)
 
-        print(positionZero)
+        if positionZero[0] == 0 and positionZero[1] == 0:
+            pass
+        if positionZero[0] == 0 and positionZero[1] == 1:
+            pass
+        if positionZero[0] == 0 and positionZero[1] == 2:
+            pass
+        if positionZero[0] == 1 and positionZero[1] == 0:
+            pass
+        if positionZero[0] == 1 and positionZero[1] == 1:
+            pass
+        if positionZero[0] == 1 and positionZero[1] == 2:
+            pass
+        if positionZero[0] == 2 and positionZero[1] == 0:
+            pass
+        if positionZero[0] == 2 and positionZero[1] == 1:
+            pass
+        if positionZero[0] == 2 and positionZero[1] == 1:
+            pass
