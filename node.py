@@ -4,7 +4,7 @@ class Node:
     node = None
 
     # Constructor
-    def __init__(self, node, predecessor)
+    def __init__(self, node, predecessor):
 
        self.node = node
        self.predecessor = predecessor
