@@ -1,7 +1,3 @@
-import collections
-from node import Node
-
-
 class Breadthfirst:
 
     @staticmethod
@@ -51,5 +47,5 @@ class Breadthfirst:
             pass
         if positionZero[0] == 2 and positionZero[1] == 1:
             pass
-        if positionZero[0] == 2 and positionZero[1] == 1:
+        if positionZero[0] == 2 and positionZero[1] == 2:
             pass
