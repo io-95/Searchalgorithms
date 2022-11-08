@@ -13,7 +13,7 @@ class Breadthfirst:
             newNodes.append(predecessor(node))
             if len(newNodes) > 0:
                 return breadthfirstsearch(newNodes, goal)
-            else
+            else:
                 print('no solution')
                 return None
 
@@ -25,4 +25,6 @@ class Breadthfirst:
 
     @staticmethod
     def predecessor(currentNode):
-        
+        for i in range(len(currentNode)):
+	    for j in rang(len(currentNode[i])):
+	    	print(currentNode[i])
