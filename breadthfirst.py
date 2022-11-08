@@ -26,5 +26,12 @@ class Breadthfirst:
 
     @staticmethod
     def predecessor(currentNode):
+        positionZero = []
+
         for i in range(len(currentNode.node)):
-	    	    print(currentNode.node[i])
+            for j in range(len(currentNode.node)):
+                if currentNode.node[i][j] == 0:
+                    positionZero.append(i)
+                    positionZero.append(j)
+
+        print(positionZero)
