@@ -1,12 +1,14 @@
+import collections
+
+
 class Breadthfirst:
     @staticmethod
     def breadthfirstsearch(nodelist, goal):
-        print(nodelist)
-
-        # newNodes = []
+        newNodes = []
         # for node in nodelist:
-        #    if node == goal:
-        #        return node
+           # if collections.Counter(node) == collections.Counter(goal):
+           #     print('goal reached')
+           #     return node
 
     def goalreached(self):
         pass
