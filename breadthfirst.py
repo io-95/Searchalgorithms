@@ -11,6 +11,7 @@ class Breadthfirst:
             if Breadthfirst.goalreached(node.node, goal):
                 print('goal reached')
                 return node
+            #list is saved in list have to be solved! For example multiple return values
             newNodes.append(Breadthfirst.predecessor(node))
 
             if newNodes[0] != None:
