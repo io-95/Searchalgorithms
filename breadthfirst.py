@@ -35,8 +35,11 @@ class Breadthfirst:
                     positionZero.append(i)
                     positionZero.append(j)
 
+        
         if positionZero[0] == 0 and positionZero[1] == 0:
-            pass
+            newNode1 = Node(currentNode.node, currentNode)
+            newNode1.node[0][0], newNode1.node[0][1] = newNode1.node[0][1], newNode1.node[0][0]
+            print(newNode1.node)
         if positionZero[0] == 0 and positionZero[1] == 1:
             pass
         if positionZero[0] == 0 and positionZero[1] == 2:
