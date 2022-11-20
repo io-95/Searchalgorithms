@@ -11,7 +11,7 @@ class Breadthfirst:
             if Breadthfirst.goalreached(node.node, goal):
                 print('goal reached')
                 node.shownode(node)
-                return node
+                return
             newNodes = Breadthfirst.predecessor(node)
 
         if newNodes[0] != None:
