@@ -12,6 +12,7 @@ class Iterativedeepening:
                 print('goal reached')
                 return
             barrier = barrier + 1
+        print('no solution found')
 
     @staticmethod
     def depthfirstsearch(node, goal, depth, barrier):
@@ -19,13 +20,14 @@ class Iterativedeepening:
             print('goal reached!')
             node.shownode(node)
             return True
-        newNodes = []
+
         newNodes = Iterativedeepening.predecessor(node)
+        list(newNodes)
         while len(newNodes) > 0 and depth < barrier:
+            print(newNodes)
             if Iterativedeepening.depthfirstsearch(newNodes[0], goal, depth+1, barrier):
                 return True
-            newNodes.pop(0)
-        print('no solution found')
+            newNodes = copy.deepcopy(list(newNodes).pop(0))
         return False
 
     @staticmethod

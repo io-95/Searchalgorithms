@@ -11,7 +11,7 @@ class Depthfirst:
             node.shownode(node)
             return True
         newNodes = []
-        newNodes = Depthfirst.predecessor(node)
+        newNodes.append(Depthfirst.predecessor(node))
         while len(newNodes) > 0:
             if Depthfirst.depthfirstsearch(newNodes[0], goal):
                 return True
