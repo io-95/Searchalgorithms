@@ -11,6 +11,7 @@ class Breadthfirst:
         for node in nodelist:
             if Breadthfirst.goalreached(node.node, goal):
                 print('goal reached')
+                node.shownode(node)
                 return node
             newNodes = Breadthfirst.predecessor(node)
 
@@ -110,4 +111,3 @@ class Breadthfirst:
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[2][2], newNode2.node[1][2] = newNode2.node[1][2], newNode2.node[2][2]
             return newNode1, newNode2
-
