@@ -2,23 +2,22 @@ from node import Node
 import copy
 
 
-class Breadthfirst:
+class Depthfirst:
 
     @staticmethod
-    def breadthfirstsearch(nodelist, goal):
+    def depthfirstsearch(node, goal):
+        if Depthfirst.goalreached(node.node, goal):
+            print('goal reached!')
+            node.shownode(node)
+            return True
         newNodes = []
-        for node in nodelist:
-            if Breadthfirst.goalreached(node.node, goal):
-                print('goal reached')
-                node.shownode(node)
-                return
-            newNodes = Breadthfirst.predecessor(node)
-
-        if newNodes[0] != None:
-            return Breadthfirst.breadthfirstsearch(newNodes, goal)
-        else:
-            print('no solution')
-            return None
+        newNodes = Depthfirst.predecessor(node)
+        while len(newNodes) > 0:
+            if Depthfirst.depthfirstsearch(newNodes[0], goal):
+                return True
+            newNodes = newNodes.pop(0)
+        print('no solution found')
+        return
 
     @staticmethod
     def goalreached(aNode, goal):
@@ -110,3 +109,4 @@ class Breadthfirst:
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[2][2], newNode2.node[1][2] = newNode2.node[1][2], newNode2.node[2][2]
             return newNode1, newNode2
+

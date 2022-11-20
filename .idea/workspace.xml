@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e46a2e82-b3f4-4dae-ba25-a00614a32d60" name="Changes" comment="correct a mistake in the last if statement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/breadthfirst.py" beforeDir="false" afterPath="$PROJECT_DIR$/breadthfirst.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Breadthfirst Search/breadthfirst.py" beforeDir="false" afterPath="$PROJECT_DIR$/Breadthfirst Search/breadthfirst.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deapthfirst Search/depthfirst.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deapthfirst Search/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deapthfirst Search/node.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Breadthfirst Search" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Searchalgorithms" />
@@ -100,7 +107,7 @@
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Main" />
-        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
