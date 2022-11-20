@@ -8,15 +8,14 @@ class Depthfirst:
     def depthfirstsearch(node, goal):
         if Depthfirst.goalreached(node.node, goal):
             print('goal reached!')
+            node.shownode(node)
             return True
         newNodes = []
         newNodes = Depthfirst.predecessor(node)
         while len(newNodes) > 0:
-            i = 0
-            if Depthfirst.depthfirstsearch(newNodes[i], goal):
+            if Depthfirst.depthfirstsearch(newNodes[0], goal):
                 return True
-            newNodes = Depthfirst.rest(newNodes)
-            i = i+1
+            newNodes = newNodes.pop(0)
         print('no solution found')
         return
 
@@ -25,10 +24,6 @@ class Depthfirst:
         res = [x for x in aNode + goal if x not in aNode or x not in goal]
         if len(res) == 0:
             return True
-
-    @staticmethod
-    def rest(nodeList):
-        return nodeList
 
     @staticmethod
     def predecessor(currentNode):
