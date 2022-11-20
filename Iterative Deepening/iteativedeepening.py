@@ -2,22 +2,31 @@ from node import Node
 import copy
 
 
-class Depthfirst:
+class Iterativedeepening:
 
     @staticmethod
-    def depthfirstsearch(node, goal):
-        if Depthfirst.goalreached(node.node, goal):
+    def iterativeDeepening(node, goal):
+        barrier = 0
+        while True:
+            if Iterativedeepening.depthfirstsearch(node, goal, 0, barrier):
+                print('goal reached')
+                return
+            barrier = barrier + 1
+
+    @staticmethod
+    def depthfirstsearch(node, goal, depth, barrier):
+        if Iterativedeepening.goalreached(node.node, goal):
             print('goal reached!')
             node.shownode(node)
             return True
         newNodes = []
-        newNodes = Depthfirst.predecessor(node)
-        while len(newNodes) > 0:
-            if Depthfirst.depthfirstsearch(newNodes[0], goal):
+        newNodes = Iterativedeepening.predecessor(node)
+        while len(newNodes) > 0 and depth < barrier:
+            if Iterativedeepening.depthfirstsearch(newNodes[0], goal, depth+1, barrier):
                 return True
             newNodes.pop(0)
         print('no solution found')
-        return
+        return False
 
     @staticmethod
     def goalreached(aNode, goal):
@@ -109,4 +118,3 @@ class Depthfirst:
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[2][2], newNode2.node[1][2] = newNode2.node[1][2], newNode2.node[2][2]
             return newNode1, newNode2
-
