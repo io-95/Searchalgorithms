@@ -8,7 +8,7 @@ def main():
     for i in range(n):
         a.append([int(j) for j in input('type in row {}(space after every digit please): '.format(i)).split()])
     
-    firstnode = Node(a, None)
+    firstnode = Node(a.copy(), None)
     nodelist = []
     nodelist.append(firstnode)
 
