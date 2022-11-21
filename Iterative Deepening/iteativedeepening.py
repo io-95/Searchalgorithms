@@ -22,12 +22,19 @@ class Iterativedeepening:
             return True
 
         newNodes = Iterativedeepening.predecessor(node)
-        list(newNodes)
-        while len(newNodes) > 0 and depth < barrier:
-            print(newNodes)
+        length = len(newNodes)
+        i = 0
+        while i < length and depth < barrier:
+            print('+0', node)
+            print('+1', length)
+            print('+2', type(newNodes))
+            print('+3', newNodes)
             if Iterativedeepening.depthfirstsearch(newNodes[0], goal, depth+1, barrier):
                 return True
-            newNodes = copy.deepcopy(list(newNodes).pop(0))
+            print('+4', newNodes)
+            newNodes = copy.deepcopy(newNodes.pop(0))
+            print('+5', newNodes)
+            i +=1
         return False
 
     @staticmethod
@@ -51,7 +58,7 @@ class Iterativedeepening:
             newNode1.node[0][0], newNode1.node[0][1] = newNode1.node[0][1], newNode1.node[0][0]
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[0][0], newNode2.node[1][0] = newNode2.node[1][0], newNode2.node[0][0]
-            return newNode1, newNode2
+            return [newNode1, newNode2]
 
         if positionZero[0] == 0 and positionZero[1] == 1:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
@@ -60,14 +67,14 @@ class Iterativedeepening:
             newNode2.node[0][1], newNode2.node[0][2] = newNode2.node[0][2], newNode2.node[0][1]
             newNode3 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode3.node[0][1], newNode3.node[1][1] = newNode3.node[1][1], newNode3.node[0][1]
-            return newNode1, newNode2, newNode3
+            return [newNode1, newNode2, newNode3]
 
         if positionZero[0] == 0 and positionZero[1] == 2:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode1.node[0][2], newNode1.node[0][1] = newNode1.node[0][1], newNode1.node[0][2]
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[0][2], newNode2.node[1][2] = newNode2.node[1][2], newNode2.node[0][2]
-            return newNode1, newNode2
+            return [newNode1, newNode2]
 
         if positionZero[0] == 1 and positionZero[1] == 0:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
@@ -76,7 +83,7 @@ class Iterativedeepening:
             newNode2.node[1][0], newNode2.node[1][1] = newNode2.node[1][1], newNode2.node[1][0]
             newNode3 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode3.node[1][0], newNode3.node[2][0] = newNode3.node[2][0], newNode3.node[1][0]
-            return newNode1, newNode2, newNode3
+            return [newNode1, newNode2, newNode3]
 
         if positionZero[0] == 1 and positionZero[1] == 1:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
@@ -87,7 +94,7 @@ class Iterativedeepening:
             newNode3.node[1][1], newNode3.node[1][2] = newNode3.node[1][2], newNode3.node[1][1]
             newNode4 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode4.node[1][1], newNode4.node[2][1] = newNode4.node[2][1], newNode4.node[1][1]
-            return newNode1, newNode2, newNode3, newNode4
+            return [newNode1, newNode2, newNode3, newNode4]
 
         if positionZero[0] == 1 and positionZero[1] == 2:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
@@ -96,14 +103,14 @@ class Iterativedeepening:
             newNode2.node[1][2], newNode2.node[1][1] = newNode2.node[1][1], newNode2.node[1][2]
             newNode3 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode3.node[1][2], newNode3.node[2][2] = newNode3.node[2][2], newNode3.node[1][2]
-            return newNode1, newNode2, newNode3
+            return [newNode1, newNode2, newNode3]
 
         if positionZero[0] == 2 and positionZero[1] == 0:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode1.node[2][0], newNode1.node[1][0] = newNode1.node[1][0], newNode1.node[2][0]
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[2][0], newNode2.node[2][1] = newNode2.node[2][1], newNode2.node[2][0]
-            return newNode1, newNode2
+            return [newNode1, newNode2]
 
         if positionZero[0] == 2 and positionZero[1] == 1:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
@@ -112,11 +119,13 @@ class Iterativedeepening:
             newNode2.node[2][1], newNode2.node[1][1] = newNode2.node[1][1], newNode2.node[2][1]
             newNode3 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode3.node[2][1], newNode3.node[2][2] = newNode3.node[2][2], newNode3.node[2][1]
-            return newNode1, newNode2, newNode3
+            return [newNode1, newNode2, newNode3]
 
         if positionZero[0] == 2 and positionZero[1] == 2:
             newNode1 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode1.node[2][2], newNode1.node[2][1] = newNode1.node[2][1], newNode1.node[2][2]
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[2][2], newNode2.node[1][2] = newNode2.node[1][2], newNode2.node[2][2]
-            return newNode1, newNode2
+            return [newNode1, newNode2]
+
+        print('++++++++++++++++++++')
