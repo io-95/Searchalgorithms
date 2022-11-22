@@ -32,7 +32,7 @@ class Iterativedeepening:
             if Iterativedeepening.depthfirstsearch(newNodes[0], goal, depth+1, barrier):
                 return True
             print('+4', newNodes)
-            newNodes = copy.deepcopy(newNodes.pop(0))
+            del newNodes[0]
             print('+5', newNodes)
             i +=1
         return False
