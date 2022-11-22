@@ -25,15 +25,9 @@ class Iterativedeepening:
         length = len(newNodes)
         i = 0
         while i < length and depth < barrier:
-            print('+0', node)
-            print('+1', length)
-            print('+2', type(newNodes))
-            print('+3', newNodes)
             if Iterativedeepening.depthfirstsearch(newNodes[0], goal, depth+1, barrier):
                 return True
-            print('+4', newNodes)
             del newNodes[0]
-            print('+5', newNodes)
             i +=1
         return False
 
@@ -44,11 +38,7 @@ class Iterativedeepening:
             return True
 
     @staticmethod
-    def predecessor(currentNode):
-        positionZero = []
-
-        for i in range(len(currentNode.node)):
-            for j in range(len(currentNode.node)):
+    def predecessor(currentNodeode)):
                 if currentNode.node[i][j] == 0:
                     positionZero.append(i)
                     positionZero.append(j)
