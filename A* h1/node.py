@@ -1,7 +1,7 @@
 class Node:
     predecessor = None
     node = []
-    h = None
+    h = 0
 
     # Constructor
     def __init__(self, node, predecessor):
@@ -17,9 +17,12 @@ class Node:
             print("\n")
 
     def calc_h(self, node):
+        counter = 1
         for i in range(len(node.node)):
-            if node.node[i] == i + 1:
-                self.h += 1
+            for j in range(len(node.node)):
+                if node.node[i][j] != counter:
+                    self.h += 1
+                counter += 1
 
         # if the given node is the goal node then decrease by 1
         if self.h == 1:
