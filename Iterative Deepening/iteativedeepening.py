@@ -38,7 +38,11 @@ class Iterativedeepening:
             return True
 
     @staticmethod
-    def predecessor(currentNodeode)):
+    def predecessor(currentNode):
+        positionZero = []
+
+        for i in range(len(currentNode.node)):
+            for j in range(len(currentNode.node)):
                 if currentNode.node[i][j] == 0:
                     positionZero.append(i)
                     positionZero.append(j)
@@ -117,5 +121,3 @@ class Iterativedeepening:
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[2][2], newNode2.node[1][2] = newNode2.node[1][2], newNode2.node[2][2]
             return [newNode1, newNode2]
-
-        print('++++++++++++++++++++')
