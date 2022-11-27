@@ -19,7 +19,7 @@ class A_star:
                 node.shownode(node)
                 return
             successor = A_star.successor(node)
-            nodelist.extend(A_star.sortin(successor, nodelist))
+            nodelist.append(A_star.sortin(successor, nodelist))
             print(nodelist)
 
     @staticmethod
@@ -31,8 +31,7 @@ class A_star:
     @staticmethod
     def sortin(successor, nodelist):
         for node in successor:
-            bisect.insort(nodelist, )
-        print(nodelist)
+            bisect.insort(nodelist, node)
         return nodelist
 
     @staticmethod

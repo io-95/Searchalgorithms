@@ -10,7 +10,6 @@ def main():
 
     firstnode = Node(a.copy(), None)
     Node.calc_h(firstnode)
-    print(firstnode.h)
 
     goal = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
     A_star.heuristicSearch(firstnode, goal)
