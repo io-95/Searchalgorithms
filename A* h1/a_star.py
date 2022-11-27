@@ -5,14 +5,29 @@ import copy
 class A_star:
 
     @staticmethod
-    def heuristicSearch():
-        pass
+    def heuristicSearch(start, goal):
+        nodelist = [start]
 
+        while True:
+            if len(nodelist) == 0:
+                print('no solution found')
+                return
+            node = nodelist[0]
+            del nodelist[0]
+            if A_star.goalreached(node, goal):
+                print('goal reached!')
+                node.shownode(node)
+                return
+            nodelist.extend(A_star.sortin(A_star.predecessor(node)), nodelist)
     @staticmethod
     def goalreached(aNode, goal):
         res = [x for x in aNode + goal if x not in aNode or x not in goal]
         if len(res) == 0:
             return True
+
+    @staticmethod
+    def sortin():
+        pass
 
     @staticmethod
     def predecessor(currentNode):
