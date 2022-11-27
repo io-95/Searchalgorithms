@@ -11,7 +11,7 @@ class Depthfirst:
             node.shownode(node)
             return True
         newNodes = []
-        newNodes.append(Depthfirst.predecessor(node))
+        newNodes.append(Depthfirst.successor(node))
         while len(newNodes) > 0:
             if Depthfirst.depthfirstsearch(newNodes[0], goal):
                 return True
@@ -26,7 +26,7 @@ class Depthfirst:
             return True
 
     @staticmethod
-    def predecessor(currentNode):
+    def successor(currentNode):
         positionZero = []
 
         for i in range(len(currentNode.node)):

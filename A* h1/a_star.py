@@ -18,7 +18,7 @@ class A_star:
                 print('goal reached!')
                 node.shownode(node)
                 return
-            nodelist.extend(A_star.sortin(A_star.predecessor(node)), nodelist)
+            nodelist.extend(A_star.sortin(A_star.successor(node)), nodelist)
     @staticmethod
     def goalreached(aNode, goal):
         res = [x for x in aNode + goal if x not in aNode or x not in goal]
@@ -30,7 +30,7 @@ class A_star:
         pass
 
     @staticmethod
-    def predecessor(currentNode):
+    def successor(currentNode):
         positionZero = []
 
         for i in range(len(currentNode.node)):
