@@ -16,11 +16,11 @@ class Node:
             node = node.predecessor
             print("\n")
 
-    def calc_h(self, node):
+    def calc_h(self):
         counter = 1
-        for i in range(len(node.node)):
-            for j in range(len(node.node)):
-                if node.node[i][j] != counter:
+        for i in range(len(self.node)):
+            for j in range(len(self.node)):
+                if self.node[i][j] != counter:
                     self.h += 1
                 counter += 1
 

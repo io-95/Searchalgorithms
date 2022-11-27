@@ -18,7 +18,10 @@ class A_star:
                 print('goal reached!')
                 node.shownode(node)
                 return
-            nodelist.extend(A_star.sortin(A_star.successor(node), nodelist))
+            successor = A_star.successor(node)
+            nodelist.extend(A_star.sortin(successor, nodelist))
+            print(nodelist)
+
     @staticmethod
     def goalreached(aNode, goal):
         res = [x for x in aNode + goal if x not in aNode or x not in goal]
@@ -27,7 +30,9 @@ class A_star:
 
     @staticmethod
     def sortin(successor, nodelist):
-        bisect.insort(nodelist, successor)
+        for node in successor:
+            bisect.insort(nodelist, )
+        print(nodelist)
         return nodelist
 
     @staticmethod
@@ -45,6 +50,7 @@ class A_star:
             newNode1.node[0][0], newNode1.node[0][1] = newNode1.node[0][1], newNode1.node[0][0]
             newNode2 = Node(copy.deepcopy(currentNode.node), currentNode)
             newNode2.node[0][0], newNode2.node[1][0] = newNode2.node[1][0], newNode2.node[0][0]
+
             return [newNode1, newNode2]
 
         if positionZero[0] == 0 and positionZero[1] == 1:
