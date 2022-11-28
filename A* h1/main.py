@@ -8,7 +8,7 @@ def main():
     for i in range(n):
         a.append([int(j) for j in input('type in row {}(space after every digit please): '.format(i)).split()])
 
-    firstnode = Node(a.copy(), None)
+    firstnode = Node(a.copy(), None, 0)
     Node.calc_h(firstnode)
 
     goal = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
