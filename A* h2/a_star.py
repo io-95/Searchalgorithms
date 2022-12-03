@@ -23,9 +23,12 @@ class A_star:
 
     @staticmethod
     def goalreached(aNode, goal):
-        res = [x for x in aNode + goal if x not in aNode or x not in goal]
-        if len(res) == 0:
-            return True
+        for i in range(3):
+            for j in range(3):
+                if aNode[i][j] != goal[i][j]:
+                    return False
+
+        return True
 
     @staticmethod
     def sortin(successor, nodelist):
