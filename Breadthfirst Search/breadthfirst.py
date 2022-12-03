@@ -12,7 +12,7 @@ class Breadthfirst:
                 print('goal reached')
                 node.shownode(node)
                 return
-            newNodes = Breadthfirst.predecessor(node)
+            newNodes = Breadthfirst.successor(node)
 
         if newNodes[0] != None:
             return Breadthfirst.breadthfirstsearch(newNodes, goal)
@@ -27,7 +27,7 @@ class Breadthfirst:
             return True
 
     @staticmethod
-    def predecessor(currentNode):
+    def successor(currentNode):
         positionZero = []
 
         for i in range(len(currentNode.node)):

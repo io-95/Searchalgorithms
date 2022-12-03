@@ -21,7 +21,7 @@ class Iterativedeepening:
             node.shownode(node)
             return True
 
-        newNodes = Iterativedeepening.predecessor(node)
+        newNodes = Iterativedeepening.successor(node)
         length = len(newNodes)
         i = 0
         while i < length and depth < barrier:
@@ -38,7 +38,7 @@ class Iterativedeepening:
             return True
 
     @staticmethod
-    def predecessor(currentNode):
+    def successor(currentNode):
         positionZero = []
 
         for i in range(len(currentNode.node)):
